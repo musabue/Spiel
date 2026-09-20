@@ -24,4 +24,11 @@ public class GewinnModel {
     public int getRundenErgebnis() {
         return rundenErgebnis;
     }
+    public boolean hatGewonnen(){
+        return gesamtPunkte > 100;
+    }
+
+    public boolean hatVerloren(){
+        return gesamtPunkte =<0;
+    }
 }
