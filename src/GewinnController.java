@@ -42,6 +42,18 @@ public class GewinnController {
             view.getLblGesamtPunkte().setText("Gesamtpunkte: " + model.getGesamtPunkte());
             view.getLblRundenErgebnis().setText("Rundenergebnis: " + model.getRundenErgebnis());
 
+            // NEU für 2.0: Farbliche Rückmeldung
+            if (model.getRundenErgebnis() > 0) {
+                view.getLblGesamtPunkte().setBackground(java.awt.Color.GREEN);
+                view.getLblRundenErgebnis().setBackground(java.awt.Color.GREEN);
+            } else if (model.getRundenErgebnis() < 0) {
+                view.getLblGesamtPunkte().setBackground(java.awt.Color.RED);
+                view.getLblRundenErgebnis().setBackground(java.awt.Color.RED);
+            } else {
+                view.getLblGesamtPunkte().setBackground(java.awt.Color.WHITE);
+                view.getLblRundenErgebnis().setBackground(java.awt.Color.WHITE);
+            }
+
             if (model.hatGewonnen()) {
                 JOptionPane.showMessageDialog(view, "Gewonnen!");
             } else if (model.hatVerloren()) {
