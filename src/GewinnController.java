@@ -10,7 +10,6 @@ public class GewinnController {
         this.model = model;
         this.view = view;
 
-        // Enter im Textfeld
         this.view.getTxtEingabe().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -18,7 +17,6 @@ public class GewinnController {
             }
         });
 
-        // Klick auf "Noch einmal!"
         this.view.getBtnNochEinmal().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,7 +39,7 @@ public class GewinnController {
             view.getLblGesamtPunkte().setText("Gesamtpunkte: " + model.getGesamtPunkte());
             view.getLblRundenErgebnis().setText("Rundenergebnis: " + model.getRundenErgebnis());
 
-            // NEU für 2.0: Farbliche Rückmeldung
+            // Färbung für version-2.0
             if (model.getRundenErgebnis() > 0) {
                 view.getLblGesamtPunkte().setBackground(java.awt.Color.GREEN);
                 view.getLblRundenErgebnis().setBackground(java.awt.Color.GREEN);
