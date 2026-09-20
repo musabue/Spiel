@@ -25,6 +25,7 @@ public class GewinnController {
                 zuruecksetzen();
             }
         });
+        view.getBtnNochEinmal().setEnabled(false);
     }
 
     public void auswerten() {
@@ -50,11 +51,15 @@ public class GewinnController {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(view, "Ungueltige Eingabe! Bitte eine Zahl eingeben.");
         }
+        view.getTxtEingabe().setEnabled(false);
+        view.getBtnNochEinmal().setEnabled(true);
     }
 
     public void zuruecksetzen() {
         view.getTxtEingabe().setText("");
         view.getTxtComputerZahl().setText("");
         view.getLblRundenErgebnis().setText("Rundenergebnis: -");
+        view.getTxtEingabe().setEnabled(true);
+        view.getBtnNochEinmal().setEnabled(false);
     }
 }
